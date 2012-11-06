@@ -55,7 +55,7 @@ class Module implements
     public function onBootstrap(EventInterface $e)
     {
         self::setConstants();
-        
+
         $app    = $e->getApplication();
         $config = $app->getServiceManager()->get('Config');
 
