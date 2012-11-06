@@ -1,0 +1,34 @@
+<phpunit bootstrap="../Bootstrap.php" colors="true" backupGlobals="false">
+    <testsuites>
+        <testsuite name="DevmonkHtmlpurifier Test Suite">
+            <directory>./</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <!--
+        <blacklist>
+            <directory suffix=".php">/path/to/files</directory>
+            <file>/path/to/file</file>
+            <exclude>
+                <directory suffix=".php">/path/to/files</directory>
+                <file>/path/to/file</file>
+            </exclude>
+        </blacklist>
+        -->
+        <whitelist>
+            <directory suffix=".php">../../src/DevmonkHtmlpurifier</directory>
+        <!--
+            <exclude>
+                <directory suffix=".phtml">view</directory>
+            </exclude>
+        -->
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="../../data/tmp/report" charset="UTF-8" yui="true" highlight="false" lowUpperBound="40" highLowerBound="80"/>
+        <log type="coverage-xml" target="../../data/tmp/coverage.xml"/>
+        <log type="json" target="../../data/tmp/logfile.json"/>
+        <log type="testdox-html" target="../../data/tmp/testdox.html"/>
+        <log type="testdox-text" target="../../data/tmp/testdox.txt"/>
+    </logging>
+</phpunit>

@@ -22,6 +22,7 @@ class Module implements
     const SERVICE_NAME            = 'purifier';
     const CONFIG_KEY_HTMLPURIFIER = 'devmonkhtmlpurifier';
     const CONFIG_KEY_CONFIG       = 'config';
+    const HTMLPURIFIER_PREFIX     = 'HTMLPURIFIER_PREFIX';
 
     /**
      * {@inheritDoc}
@@ -41,15 +42,18 @@ class Module implements
         );
     }
 
+    public static function setConstants()
+    {
+        if (!defined(self::HTMLPURIFIER_PREFIX)) {
+            define(self::HTMLPURIFIER_PREFIX, __DIR__ . '/src/HTMLPurifier/library');
+        }
+    }
+
     /**
      * {@inheritDoc}
      */
     public function onBootstrap(EventInterface $e)
     {
-        if (!defined('HTMLPURIFIER_PREFIX')) {
-            define('HTMLPURIFIER_PREFIX', __DIR__ . '/src/HTMLPurifier/library');
-        }
-
         $app    = $e->getApplication();
         $config = $app->getServiceManager()->get('Config');
 
