@@ -102,7 +102,7 @@ class Module implements
         return array(
             'aliases'   => array(),
             'factories' => array(
-                'TwigEnvironment' => 'DevmonkHtmlpurifier\Service\EnvironmentFactory',
+                'ZfcTwigEnvironment' => 'DevmonkHtmlpurifier\Service\EnvironmentFactory',
             )
         );
     }
