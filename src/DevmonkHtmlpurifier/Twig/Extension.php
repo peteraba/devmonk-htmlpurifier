@@ -3,7 +3,6 @@
 namespace DevmonkHtmlpurifier\Twig;
 
 use Twig_Extension;
-use ZfcTwig\Twig\Environment;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class Extension extends Twig_Extension
@@ -18,7 +17,7 @@ class Extension extends Twig_Extension
      */
     protected $serviceLocator;
 
-    public function __construct(Environment $env, ServiceLocatorInterface $serviceLocator)
+    public function __construct(\Twig_Environment $env, ServiceLocatorInterface $serviceLocator)
     {
         $this->env = $env;
         $this->serviceLocator = $serviceLocator;

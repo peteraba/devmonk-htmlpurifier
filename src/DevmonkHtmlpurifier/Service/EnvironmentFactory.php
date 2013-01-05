@@ -5,7 +5,7 @@ namespace DevmonkHtmlpurifier\Service;
 use DevmonkHtmlpurifier\Twig\Extension;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class EnvironmentFactory extends \ZfcTwig\Service\EnvironmentFactory
+class EnvironmentFactory extends \ZfcTwig\Service\TwigEnvironmentFactory
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
